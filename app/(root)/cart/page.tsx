@@ -1,10 +1,9 @@
-import React from 'react'  // Imports React to create a component.
+import React from 'react'
 
-
-const Cart = () => {    // Defines the Cart component.
+const Cart = () => {
   return (
-    <div>Cart</div>     // Displays a simple "Cart" text inside a div.
+    <div>Cart</div>
   )
 }
 
-export default Cart    // Makes the Cart component available for use in other files.
+export default Cart

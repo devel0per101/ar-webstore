@@ -1,10 +1,11 @@
-import React from 'react'   // Imports React library to build the component.
+import React from 'react'
 
-const ProductCard = ({ product }:{ product: ProductType }) => {  // Defines the ProductCard component that takes a product as a prop.
+const ProductCard = ({ product }:{ product: ProductType }) => {
   return (
-    <div>       {/* Container for the product card */}
+    <div>
+      
     </div>
   )
 }
 
-export default ProductCard     // Exports the ProductCard component to be used in other parts of the app.
+export default ProductCard

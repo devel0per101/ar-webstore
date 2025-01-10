@@ -1,22 +1,22 @@
-import { getCollections } from '@/lib/actions'   // Gets the function to load the collections.
-import Image from 'next/image'    // Uses the special Image component to show images.
-import Link from 'next/link'      // Uses Link to make items clickable.
+import { getCollections } from '@/lib/actions'
+import Image from 'next/image'
+import Link from 'next/link'
 
-const Collections = async () => {     // Makes the Collections component that loads data.
-    const collections = await getCollections()    // Waits for the list of collections from the server.
+const Collections = async () => {
+    const collections = await getCollections()
     return (
-        <div className="flex flex-col items-center gap-10 py-8 px-5">  {/* Makes a container with spacing and centers the content */}
-            <p className='text-heading1-bold'>Collections</p>   {/* Displays the title "Collections" */}
-            <div className="flex items-center justify-center gap-8">    {/* Organizes the collection items with space between them */}
-                {collections.map((collection: CollectionType) => (      // Loops through each collection to show it.
-                    <Link href={`/collections/${collection._id}`} key={collection._id}>  {/* Creates a clickable link for each collection */}
+        <div className="flex flex-col items-center gap-10 py-8 px-5">
+            <p className='text-heading1-bold'>Collections</p>
+            <div className="flex items-center justify-center gap-8">
+                {collections.map((collection: CollectionType) => (
+                    <Link href={`/collections/${collection._id}`} key={collection._id}>
                         <Image
-                            key={collection._id}                  // Uses the collection's ID for the image.
-                            src={collection.image}               // Shows the image for this collection.
-                            alt={collection.title}               // Adds text for the image (if it doesn't load).
-                            width={350}                          // Sets the image width.
-                            height={200}                         // Sets the image height.
-                            className='rounded-lg cursor-pointer'  // Makes the image round and clickable.
+                            key={collection._id}
+                            src={collection.image}
+                            alt={collection.title}
+                            width={350}
+                            height={200}
+                            className='rounded-lg cursor-pointer'
                         />
                     </Link>
                 ))}
@@ -25,4 +25,4 @@ const Collections = async () => {     // Makes the Collections component that lo
     );
 };
 
-export default Collections  // Makes the Collections component ready to be used in other parts of the app.
+export default Collections

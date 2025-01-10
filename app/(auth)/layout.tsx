@@ -1,14 +1,14 @@
-import type { Metadata } from "next"; // Sets up metadata for the page (like title and description).
-import { Inter } from "next/font/google"; // Adds the Inter font from Google Fonts.
-import "../globals.css"; // Loads global styles for the app.
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "../globals.css";
 
-import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs' // Adds tools for login, user buttons, and other authentication features.
+import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 
-const inter = Inter({ subsets: ["latin"] }); // Prepares the Inter font with Latin characters.
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AR Webstore Auth",   // The title of the page.
-  description: "AR Webstore",  // A short description of the page.
+  title: "AR Webstore Auth",
+  description: "AR Webstore",
 };
 
 export default function RootLayout({
@@ -16,11 +16,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (             // Defines the root layout of the app, taking children components as input.
-    <ClerkProvider>    {/* Wraps the app with ClerkProvider to enable authentication features */}
-    <html lang="en">   {/* Sets the language of the page to English */}
-      <body className={inter.className}>{children}</body>  {/* Applies the Inter font to the page */}
-    </html> 
+  return (
+    <ClerkProvider>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
     </ClerkProvider>
   );
 }
